@@ -1,0 +1,23 @@
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+- fun f(x: int, y: int) = x + y;
+val f = fn : int * int -> int
+- val vf = f(2, 3);
+val vf = 5 : int
+- let val mf = f(1,2)
+= in
+= if 1 = 0 then 0
+= else
+= mf
+= end;
+val it = 3 : int
+- mf
+= ;
+stdIn:9.1-9.3 Error: unbound variable or constructor: mf
+- use "let_and_efficiency.sml";
+[opening let_and_efficiency.sml]
+val bad_max = fn : int list -> int
+val good_max = fn : int list -> int
+val it = () : unit
+- good_max([1,2,3,4,5]);
+val it = 5 : int
+- 

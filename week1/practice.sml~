@@ -1,0 +1,11 @@
+fun alternate(xs: int list) =
+  let
+      fun inner(xs: int list, x: int, y int) =
+	if null xs then 0
+	else
+      val x = if y mod 2 = 0 then ~x else x
+					      x + inner(tl xs)
+  in
+      inner(xs, 0, 1)
+					 
+					 
