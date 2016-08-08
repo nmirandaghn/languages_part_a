@@ -67,9 +67,13 @@ fun repeat(xs: int list, ys: int list) =
   in
       if null xs orelse null ys then []
       else
-	  helper(hd xs, hd ys)
-		repeat(tl xs, tl ys)
+	  helper(hd xs, hd ys) @ repeat(tl xs, tl ys)
   end;
+
+fun addOpt(x: int option, y: int option) =
+  if x = NONE orelse y = NONE then NONE
+  else
+      SOME(valOf(x) + valOf(y));
 
       
  
