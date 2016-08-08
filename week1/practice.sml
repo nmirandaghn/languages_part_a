@@ -38,6 +38,38 @@ fun min(xs: int list) =
 fun min_max(xs: int list) =
   (min xs, max xs);
 
+fun cum_sum(xs: int list) =
+  let
+      fun inner(xs: int list, acc: int) =
+	if null xs then []
+	else
+	    let
+		val x = hd(xs) + acc
+	    in
+		x :: inner(tl xs, x)
+	    end
+  in
+      inner(xs, 0)
+  end;
 
-					 
-					 
+fun greeting(x: string option) =
+  if x = NONE then
+      "Hello there, you!"
+  else
+      "Hello there, " ^ valOf x ^  "!";
+
+fun repeat(xs: int list, ys: int list) =
+  let
+      fun helper(x: int, y: int) =
+	if y <= 0 then []
+	else
+	    x :: helper(x, y - 1)
+  in
+      if null xs orelse null ys then []
+      else
+	  helper(hd xs, hd ys)
+		repeat(tl xs, tl ys)
+  end;
+
+      
+ 
